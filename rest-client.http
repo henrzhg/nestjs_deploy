@@ -1,0 +1,108 @@
+GET http://localhost:3000
+
+### get all songs
+GET http://localhost:3000/songs
+
+
+
+### pagination
+GET http://localhost:3000/songs/pagination?page=1&limit=2
+
+
+### get song by id
+GET http://localhost:3000/songs/2
+
+
+### get all songs
+POST http://localhost:3000/songs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5zb25AZW1haWwuY29tIiwidXNlcklkIjo0LCJpYXQiOjE3MzEzNDE2NzQsImV4cCI6MTczMTQyODA3NH0.UW4yKfeJpH5fT82serqtLSt_QcOIiZbmlah67bk2g5M
+
+{
+    "title":"Animal 2",
+    "artists":[3],
+    "releasedDate":"2024-07-01",
+    "duration":"04:00",
+    "lyrics":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+}
+
+
+
+### get all songs
+PUT http://localhost:3000/songs/2
+Content-Type: application/json
+
+{
+    "title":"lasting lover 123",
+    "artists":["sigla", "anonym"],
+    "releasedDate":"2024-05-30",
+    "duration":"03:50"
+}
+
+### get all songs
+DELETE http://localhost:3000/songs/2
+
+
+### create playlists
+POST http://localhost:3000/playlists
+Content-Type: application/json
+
+{
+    "name": "playlists-1",
+    "songs": [8, 9],
+    "user": 2
+}
+
+
+### User signup
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "selena",
+    "lastName": "gomez",
+    "email":"selenagomez@email.com",
+    "password":"12345678"
+}
+
+
+### User login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"martingarrix@email.com",
+    "password":"12345678"
+}
+
+
+### Get progile
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcnRpbmdhcnJpeEBlbWFpbC5jb20iLCJ1c2VySWQiOjUsImFydGlzdElkIjozLCJpYXQiOjE3MzEzNDE2OTcsImV4cCI6MTczMTQyODA5N30.L4hIOxFbDpe-h3C-FPzJXMRsP7yrvK0hwr-cvMMRBhg
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5zb25AZW1haWwuY29tIiwidXNlcklkIjo0LCJpYXQiOjE3MzEzNDE2NzQsImV4cCI6MTczMTQyODA3NH0.UW4yKfeJpH5fT82serqtLSt_QcOIiZbmlah67bk2g5M
+
+
+### enable 2fa
+GET http://localhost:3000/auth/enable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcnRpbmdhcnJpeEBlbWFpbC5jb20iLCJ1c2VySWQiOjUsImFydGlzdElkIjozLCJpYXQiOjE3MzE0ODk0NzIsImV4cCI6MTczMTU3NTg3Mn0.naKKs-mjwGUm40PRoQfUgX-OeBdKZxjjuWKQyEi3uiM
+Content-Type: application/json
+
+
+### validate 2fa
+POST http://localhost:3000/auth/validate-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcnRpbmdhcnJpeEBlbWFpbC5jb20iLCJ1c2VySWQiOjUsImFydGlzdElkIjozLCJpYXQiOjE3MzE0ODk0NzIsImV4cCI6MTczMTU3NTg3Mn0.naKKs-mjwGUm40PRoQfUgX-OeBdKZxjjuWKQyEi3uiM
+Content-Type: application/json
+
+{
+    "token": "253504"
+}
+
+
+### get profile with api-key
+GET http://localhost:3000/auth/profile
+Authorization: Bearer eeb8d8a4-bb92-4488-8496-13231ded5a67
+Content-Type: application/json
+
+
+#### test
+GET http://localhost:3000/auth/test
